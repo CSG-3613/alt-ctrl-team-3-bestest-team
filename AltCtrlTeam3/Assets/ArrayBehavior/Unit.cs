@@ -9,7 +9,7 @@ public class Unit
     private bool hostile;
     private Vector2 location;
 
-    public Unit(int initHealth, int initSize, bool initHostile = true)
+    public Unit(int initHealth, int initSize, bool initHostile = true) //location not set due to both clunkyness and the desire to randomly set locations
     {
         health  = initHealth;
         size = initSize;

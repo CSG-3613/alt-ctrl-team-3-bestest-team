@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class PlayFieldController: MonoBehaviour
 {
-    public Array field;
+    [SerializeField] private Array field;
+    private List<Unit> units = new List<Unit>();
+    [SerializeField] private int freindlyNumber;
+    [SerializeField] private int hostileNumber;
+
 
     // Start is called before the first frame update
     void Start()
