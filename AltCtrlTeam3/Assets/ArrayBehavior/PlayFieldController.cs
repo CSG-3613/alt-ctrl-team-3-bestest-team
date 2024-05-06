@@ -10,11 +10,7 @@ public class PlayFieldController: MonoBehaviour
     void Start()
     {
         PrintField();
-        field.SetValue(7, 7, 1);
-        PrintField();
-        field.SetValue(1, 1, 1);
-        field.SetValue(3, 5, 1);
-        field.SetValue(7, 1, 1);
+        HitPoint(4, 3);
         PrintField();
     }
 
@@ -23,6 +19,19 @@ public class PlayFieldController: MonoBehaviour
     {
         
     }
+
+    public void HitPoint(int x, int y)
+    {
+        if (false)
+        {
+            field.SetValue(x, y, 2);
+        }
+        else
+        {
+            field.SetValue(x, y, 1);
+        }
+    }
+
 
     private void PrintField() //Convinnience for testing function
     {
