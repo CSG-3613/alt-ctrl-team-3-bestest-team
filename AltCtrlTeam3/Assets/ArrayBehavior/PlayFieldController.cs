@@ -24,7 +24,7 @@ public class PlayFieldController: MonoBehaviour
     {
         if (false)
         {
-            field.SetValue(x, y, 2);
+            field.SetValue(x, y, 2); //yea yea fuck you compiler I know. this is for testing
         }
         else
         {
