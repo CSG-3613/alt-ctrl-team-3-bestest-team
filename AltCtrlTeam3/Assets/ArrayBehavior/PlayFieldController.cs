@@ -14,7 +14,21 @@ public class PlayFieldController: MonoBehaviour
     void Start()
     {
         PrintField();
-        HitPoint(4, 3);
+        SetUnits();
+        foreach (Unit unit in units)
+        {
+            for (int i = 1; i <= 7; i++)
+            {
+                for (int j = 1; j <= 7; j++)
+                {
+                    //Debug.Log(unit.IsHit(i, j));
+                    if (unit.IsHit(i, j))
+                    {
+                        HitPoint(i, j);
+                    }
+                }
+            }
+        }
         PrintField();
     }
 
@@ -36,6 +50,15 @@ public class PlayFieldController: MonoBehaviour
         }
     }
 
+    private void SetUnits()
+    {
+        int x = Random.Range(1, 7);
+        int y = Random.Range(1, 7);      //7 excluded since being at 7 will mean it bleeds off the map.
+        Unit unit = new Unit(3, 2, true);
+        unit.SetLocation(x, y);
+        units.Add(unit);
+
+    }
 
     private void PrintField() //Convinnience for testing function
     {

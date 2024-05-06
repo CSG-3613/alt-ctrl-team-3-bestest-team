@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Pool;
 
 public class Unit
 {
@@ -37,6 +38,16 @@ public class Unit
     public int GetSize()
     {
         return size;
+    }
+    public bool IsHit(int x, int y)
+    {
+        int xOffset = x - (int)location.x;
+        int yOffset = y - (int)location.y; //not as efficient but easier to read this way
+        if (xOffset < size && xOffset >= 0 && yOffset < size && yOffset >= 0)
+        {
+            return true;
+        }
+        else return false;
     }
 
 
