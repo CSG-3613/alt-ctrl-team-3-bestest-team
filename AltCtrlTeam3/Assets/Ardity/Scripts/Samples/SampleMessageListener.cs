@@ -16,10 +16,14 @@ using System.Collections;
  */
 public class SampleMessageListener : MonoBehaviour
 {
+
+    public PlayFieldController controller;
+
     // Invoked when a line of data is received from the serial device.
     void OnMessageArrived(string msg)
     {
         Debug.Log("Message arrived: " + msg);
+        Debug.Log(msg.Substring(30, 1));
     }
 
     // Invoked when a connect/disconnect event occurs. The parameter 'success'
