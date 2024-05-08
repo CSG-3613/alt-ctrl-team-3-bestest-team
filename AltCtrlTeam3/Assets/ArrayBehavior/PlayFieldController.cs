@@ -17,7 +17,7 @@ public class PlayFieldController: MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        SetUnits();
     }
 
     // Update is called once per frame
@@ -54,6 +54,7 @@ public class PlayFieldController: MonoBehaviour
         }
         if (isHit)
         {
+            Debug.Log("hi");
             if (unitHit.IsAlive())
             {
                 field.SetValue(x, y, 2);
@@ -116,7 +117,7 @@ public class PlayFieldController: MonoBehaviour
         units.Add(unit5);
     }
 
-    private void PrintField() //Convinnience for testing function
+    public void PrintField() //Convinnience for testing function
     {
         string printString = "";
         for (int i = 0; i < field.GetPlayingField().Length; i++)
